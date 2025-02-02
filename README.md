@@ -1,3 +1,17 @@
+## Benchmark test
+Проект предназначен для реализации и сравнения производительности четырех различных способов обращения к методу Student#name() (или любому другому классу/интерфейсу) в Java.
+- Прямой доступ
+- java.lang.reflect.Method
+- java.lang.invoke.MethodHandles
+- java.lang.invoke.LambdaMetafactory
+
+| Benchmark               | Mode | Score   | Units   |
+|------------------------|------|---------|---------|
+| Main.directAccess      | avgt | 0.902   | ns/op   |
+| Main.lambdaMetafactory | avgt | 6.747   | ns/op   |
+| Main.methodHandles     | avgt | 5.405   | ns/op   |
+| Main.reflection        | avgt | 9.717   | ns/op   |
+
 
 
 ## Структура проекта
@@ -31,3 +45,22 @@
 - [.gitattributes](.gitattributes), [.gitignore](.gitignore) – служебные файлы
   для git, с описанием того, как обрабатывать различные файлы, и какие из них
   игнорировать
+
+
+Запуск только компиляции основных классов:
+
+```shell
+mvn compile
+```
+
+Запуск тестов:
+
+```shell
+mvn test
+```
+
+Запуск линтеров:
+
+```shell
+mvn checkstyle:check modernizer:modernizer spotbugs:check pmd:check pmd:cpd-check
+```
