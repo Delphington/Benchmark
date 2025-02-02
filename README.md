@@ -52,15 +52,3 @@
 ```shell
 mvn compile
 ```
-
-Запуск тестов:
-
-```shell
-mvn test
-```
-
-Запуск линтеров:
-
-```shell
-mvn checkstyle:check modernizer:modernizer spotbugs:check pmd:check pmd:cpd-check
-```
